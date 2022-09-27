@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
-
+import BasicExample from './Components/Navbar/Navbar'
+import TextoPrincipal from './Components/TextoPrincipal/TextoPrincipal';
+import Filtros from './Components/Filtros/Filtros'
+import Products from './Products/Products'
+import Portada from './Components/Portada/Portada';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BasicExample/>
+      <Portada />
+      <div className="body">
+      <TextoPrincipal/>
+      <Filtros/>
+      <h2 className="h2titulo mt-5 mb-4 text-start">Todos los modelos. <span className="h2titulospan"> Elegí el tuyo hoy!</span></h2>
+      <Products/>
+      </div>
     </div>
   );
 }

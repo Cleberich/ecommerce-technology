@@ -1,0 +1,13 @@
+.fsi{
+    margin-left: 50px;
+}
+@media only screen and (min-width: 768px){
+    .fsi{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif!important;
+        font-size: 48px!important;
+        font-weight: 550;
+        color: #1D1D1F;
+        padding: 77px;
+        margin-left: 250px;
+    }
+}

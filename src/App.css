@@ -36,3 +36,50 @@
     transform: rotate(360deg);
   }
 }
+.body{
+  background-color: #F5F5F7!important;
+}
+
+.h2titulo{
+  margin-left: 50px;
+}
+
+@media only screen and (min-width: 768px){
+  .h2titulo{
+    font-size: 29px!important;
+    color: #1D1D1F!important;
+    margin-left: 295px;
+    font-weight: 700;
+  }
+    .h2titulospan{
+    font-size: 29px!important;
+    color: #6E6E73!important;
+}
+}
+.pun {
+  font-size: 7rem!important;
+  margin-top: -70px!important;
+  column-gap: 1px!important;
+}
+#imgproduct{
+  width: 100%!important;
+  height: auto;
+}
+#imgMercadolibre{
+  width: 50%;
+}
+#CARD {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+}
+#portada {
+  width: 100%;
+}
+
+
+@media only screen and (max-width: 768px){
+    #enlaces{
+      display: none!important;
+    }
+}
