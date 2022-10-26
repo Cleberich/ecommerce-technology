@@ -1,11 +1,13 @@
 const products = [
     {"name":"iPhone 14 Pro Max",
+    "stock": " 9",
     "badge": "NEW",
      "categorie": "smartphone",
      "description": "From $999 or $41/mo. for 24 mo.",
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone14pro-202209?wid=340&hei=264&fmt=p-jpg&qlt=95&.v=1663611329492"},
 
     {"name":"iPhone 14 Plus",
+    "stock": "3",
     "badge": "NEW",
      "categorie": "smartphone",
      "description": "From $999 or $41/mo. for 24 mo.",
@@ -33,17 +35,20 @@ const products = [
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-macbook-air-202206?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1653499620093"},
     
     {"name":"MacBook Pro 13”",
+    "stock": " ",
       "categorie": "macbook",
      "description": "From $1199 or $99/mo. for 24 mo.",
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-macbook-air-202206?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1653499620093"},
     
     {"name":"MacBook Pro 14” and 16”",
+    "stock": 8,
     "badge": "",
       "categorie": "macbook",
      "description": "From $1199 or $99/mo. for 24 mo.",
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mac-card-40-macbook-pro-14-16-202206?wid=600&hei=500&fmt=p-jpg&qlt=95&.v=1653498040386"},
     
     {"name":"Apple Watch Ultra",
+    "stock": 12,
     "badge": "READY FOR ADVENTURE",
      "categorie": "watch",
      "description": "From $1199 or $99/mo. for 24 mo.",
@@ -55,12 +60,14 @@ const products = [
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-s8-202209?wid=340&hei=264&fmt=jpeg&qlt=95&.v=1661647167115"},
     
     {"name":"Apple Watch SE",
+    "stock": 1,
     "badge": "APABLE AND AFFORDABLE",
      "categorie": "watch",
      "description": "From $1199 or $99/mo. for 24 mo.",
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-se-202209_GEO_US?wid=340&hei=264&fmt=png-alpha&.v=1661812058124"},
     
     {"name":"Apple Watch Hermès",
+    "stock": 1,
     "badge": "FASHION FORWARD",
      "categorie": "watch",
      "description": "From $1199 or $99/mo. for 24 mo.",
