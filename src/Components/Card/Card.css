@@ -6,3 +6,30 @@
     top: 30px;
     left: -20px;
 }
+.fs-8{
+    font-size: 10px!important;
+}
+.card:hover{
+    transform: scale(1.1);
+     transition: all .5s ease;
+}
+
+.card:hover button{
+    transition: all .9s ease;
+    visibility: visible!important;
+    
+} 
+#option{
+    position: absolute;
+    transition: all .1s ;
+    top: 65%;
+    left: 25%;
+    transition-delay: 100ms;
+}
+.btn-secondary {
+    background-color: #DFDEE3!important;
+}
+
+#sm:hover{
+    transform: none;
+}

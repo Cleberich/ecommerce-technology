@@ -6,12 +6,14 @@ import LogoMyShop from '../Logo/Logo';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 import SearchIcon from '@mui/icons-material/Search';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { Link } from 'react-router-dom'
+import CartWidget from '../CartWidget/CartWidget'
 
 function BasicExample() {
   return (
     <Navbar className="dark sticky-sm-top sticky-md-top sticky-lg-top sticky-xl-top" expand="md">
       <Container className="separacion container-fluid " id="desktop">
-        <Navbar.Brand href="#home"><LogoMyShop/> </Navbar.Brand>
+        <Navbar.Brand href="#home"><Link to="/"><LogoMyShop/></Link> </Navbar.Brand>
         <Navbar.Toggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -24,7 +26,7 @@ function BasicExample() {
         <input className='form-control w-25 mx-auto bg-light' type="search" placeholder='Buscar'></input>
         <button className='btn btn-outline-dark border-0 ' ><SearchIcon className="text-light"/></button>
        
-        <ShoppingBagOutlinedIcon className="text-light fs-5"/><span className='text-dark badge bg-white ms-1'>2</span>
+        <ShoppingBagOutlinedIcon className="text-light fs-5"/><span className='text-dark badge bg-white ms-1'><CartWidget/></span>
       </Container>
       <Navbar className='container-fluid' collapseOnSelect expand="" bg="negro" variant="dark" id="mobile">
       <Container className="d-flex justify-content-between" >
@@ -51,15 +53,3 @@ function BasicExample() {
 }
 
 export default BasicExample;
-
-
-
-// function CollapsibleExample() {
-//   return (
-//     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      
-//     </Navbar>
-//   );
-// }
-
-// export default CollapsibleExample;
