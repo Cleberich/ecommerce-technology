@@ -1,5 +1,4 @@
 import { useState,useEffect } from "react"
-// import { getProduct } from "../../asynckMock"
 import { useParams } from 'react-router-dom'
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import MemoryIcon from '@mui/icons-material/Memory';
@@ -13,6 +12,7 @@ import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import { getDoc, doc } from 'firebase/firestore'
 import { baseDeDatos } from "../../services/firebase";
+
 
 
 const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
@@ -99,12 +99,12 @@ const ItemDetailContainer = ({name, id, price, stock}) =>{
            </div>
            <div className="col mt-1">
             <small className="badge bg-dark text-white">{product.badge}</small>
-           <h2 className="text-lef  fs-2 fw-bold ">{product.name}</h2>
+           <h2 className="text-left  fs-2 fw-bold ">{product.name}</h2>
            <div  className="d-flex justify-content-between">
            <p className="text-dark mt-2">{product.description}</p>
            </div>
+           <h2 className="text-dark text-left fs-5 fw-bold mt-2">${product.price}</h2>
            <div>
-           {/* <button className="btn btn-primary fs-6 rounded-4 w-50 - mx-auto" onClick={btnAgregarAlCarrito}>Agregar al carrito</button> */}
            </div>
            <div className=''>
                 {

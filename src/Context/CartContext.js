@@ -1,8 +1,5 @@
 import { createContext, useState, useEffect } from 'react'
 import React from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import 'react-toastify/dist/ReactToastify.min.css';
 import Swal from 'sweetalert2'
 
 
@@ -15,23 +12,17 @@ export const CartContextProvider =({children}) =>{
     const [subtotal, setSubtotal] = useState(0)
 
     
-    const notifySuccess = () => toast.success('🛒Agregado al carrito!', {
-        position: "top-right",
-        autoClose: 1500,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
-
-    
         const agregarItem = (productoAgregado) =>{
             if(!estaEnCarrito(productoAgregado.id)){
                 setCart([...cart, productoAgregado])
-                notifySuccess()
+              
             }else{
-               console.log("producto ya agregado")
+                Swal.fire(
+                    'Oh no!!',
+                    'Ya agregaste este producto al carrito!',
+                    'error'
+                  )
+                
             }
         }
 

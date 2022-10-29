@@ -4,12 +4,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import LogoMyShop from '../Logo/Logo';
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import SearchIcon from '@mui/icons-material/Search';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Login from '../Login/Login'
-
 
 function BasicExample() {
   return (
@@ -24,8 +21,6 @@ function BasicExample() {
             <Link to="/category/watch" className='fs-7 text-white text-decoration-none mx-1'>Watch</Link>
           </Nav>
         </Navbar.Collapse>
-        <input className='form-control w-25 mx-auto bg-light' type="search" placeholder='Buscar'></input>
-        <button className='btn btn-outline-dark border-0 ' ><SearchIcon className="text-light"/></button>
         <Link to="/cart"><ShoppingBagOutlinedIcon className="text-light fs-5"/><span className='text-dark badge bg-white ms-1'><CartWidget/></span></Link>
         <Login/>
       </Container>

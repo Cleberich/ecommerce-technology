@@ -14,3 +14,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 export const baseDeDatos = getFirestore(app)
+export default app

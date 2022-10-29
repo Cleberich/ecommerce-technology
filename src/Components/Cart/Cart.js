@@ -7,11 +7,11 @@ import { Link } from "react-router-dom"
 
 const Cart = () => {
 
+
     const {cart} = useContext(CartContext)
-    const {id} = cart
-    const {eliminarDelCarrito} = useContext(CartContext)
+    const {subtotal} = useContext(CartContext)
     const {vaciarCarrito} = useContext(CartContext)
-    
+  
 
     return (
     <div className="col-10 mt-5 card mx-auto rounded-4 py-5 border-0 shadow-sm " id="cardCart">
@@ -29,6 +29,7 @@ const Cart = () => {
         { cart.map(p => <CartItem key={p.id} {...p}/>) }
         {cart.length > 0 ? (
            <div className="my-3 d-block justify-content-between">
+            <h3 className="text-end fs-5 me-3">Total <b>${subtotal}</b></h3>
              <button onClick={vaciarCarrito} className="btn btn-danger me-2">Limpiar carrito</button>
             <Link to='/checkout'><button className="btn btn-dark">Checkout</button></Link>
            </div>

@@ -1,7 +1,7 @@
-import { baseDeDatos } from "../../services/firebase/firebase";
+import { baseDeDatos } from '../../services/firebase'
 import { collection, addDoc } from 'firebase/firestore'
 
- const sendCustomEmail = (correo, total) =>{
+ const enviarMailDeConfirmacion = (correo, total) =>{
     const collectionRef = collection(baseDeDatos, 'email')
     const emailContent = {
         to: correo,
@@ -26,5 +26,5 @@ import { collection, addDoc } from 'firebase/firestore'
     }  
     return addDoc(collectionRef, emailContent)
 }
-export default sendCustomEmail
+export default enviarMailDeConfirmacion
 
