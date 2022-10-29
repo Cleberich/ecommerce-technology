@@ -8,6 +8,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
+import Login from '../Login/Login'
+
 
 function BasicExample() {
   return (
@@ -17,28 +19,25 @@ function BasicExample() {
         <Navbar.Toggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link className="text-light fs-7" href="#home">Mac</Nav.Link>
-            <Nav.Link className="text-light fs-7" href="#link">Iphone</Nav.Link>
-            <Nav.Link className="text-light fs-7" href="#link">iPad</Nav.Link>
-            <Nav.Link className="text-light fs-7" href="#link">Watch</Nav.Link>
+            <Link to="/category/smartphone" className='fs-7 text-white text-decoration-none mx-1'>iPhone</Link>
+            <Link to="/category/macbook" className='fs-7 text-white text-decoration-none mx-1'>Macbook</Link>
+            <Link to="/category/watch" className='fs-7 text-white text-decoration-none mx-1'>Watch</Link>
           </Nav>
         </Navbar.Collapse>
         <input className='form-control w-25 mx-auto bg-light' type="search" placeholder='Buscar'></input>
         <button className='btn btn-outline-dark border-0 ' ><SearchIcon className="text-light"/></button>
-       
-        <ShoppingBagOutlinedIcon className="text-light fs-5"/><span className='text-dark badge bg-white ms-1'><CartWidget/></span>
+        <Link to="/cart"><ShoppingBagOutlinedIcon className="text-light fs-5"/><span className='text-dark badge bg-white ms-1'><CartWidget/></span></Link>
+        <Login/>
       </Container>
       <Navbar className='container-fluid' collapseOnSelect expand="" bg="negro" variant="dark" id="mobile">
       <Container className="d-flex justify-content-between" >
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="">
-            <Nav.Link href="#features">iPhone</Nav.Link>
-            <Nav.Link href="#pricing">Macbook</Nav.Link>
-            <Nav.Link href="#pricing">iPad</Nav.Link>
-            <Nav.Link href="#pricing">Watch</Nav.Link>
-          </Nav>
-          
+            <Link to="/smartphone" className='fs-7 text-white text-decoration-none mx-1'>iPhone</Link>
+            <Link to="/macbook" className='fs-7 text-white text-decoration-none mx-1'>Macbook</Link>
+            <Link to="/watch" className='fs-7 text-white text-decoration-none mx-1'>Watch</Link>
+          </Nav>  
         </Navbar.Collapse>
         <Navbar.Brand href="#home"><LogoMyShop className="w-125" /> </Navbar.Brand>
 

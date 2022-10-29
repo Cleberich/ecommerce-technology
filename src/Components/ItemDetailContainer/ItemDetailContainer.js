@@ -1,15 +1,19 @@
 import { useState,useEffect } from "react"
-import { getProduct } from "../../asynckMock"
+// import { getProduct } from "../../asynckMock"
 import { useParams } from 'react-router-dom'
 import CloseFullscreenIcon from '@mui/icons-material/CloseFullscreen';
 import MemoryIcon from '@mui/icons-material/Memory';
 import CenterFocusWeakIcon from '@mui/icons-material/CenterFocusWeak';
 import FiveGIcon from '@mui/icons-material/FiveG';
 import FingerprintIcon from '@mui/icons-material/Fingerprint';
+import SpinnerReact from '../Spinner/Spinner'
 import '../Card/Card.css'
 import { useContext } from 'react'
 import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
+import { getDoc, doc } from 'firebase/firestore'
+import { baseDeDatos } from "../../services/firebase";
+
 
 const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     const [count, setCount] = useState(initial)
@@ -40,20 +44,39 @@ const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     )
 }
 
-const DetallesDelProducto = ({name, id, price, stock}) =>{
+const ItemDetailContainer = ({name, id, price, stock}) =>{
 
     const {agregarItem} = useContext(CartContext)
 
     const [ product, setProduct ] = useState({})
-    const { productId } = useParams()
     const [cantidad, setCantidad] = useState(0)
+    const [loading, setLoading] = useState(true)
+    const { productId } = useParams()
 
     useEffect (()=>{
-        getProduct(productId).then(resolve =>{
-           
-            setProduct(resolve)
+        
+        const documentoReferencia = doc(baseDeDatos, 'products', productId)
+        
+        getDoc(documentoReferencia).then(doc =>{
+            const data = doc.data()
+            const productoAdaptado = { id: doc.id, ...data}
+            setProduct(productoAdaptado)
+        }).catch(error =>{
+            console.log(error)
+        }).finally(()=>{
+            setLoading(false)
         })
-    }, [])
+    }, [productId])
+
+    if(loading) {
+        return (
+            <div>
+                <h1 className="fs-5 mt-5">Cargando productos...</h1>
+                <SpinnerReact/>
+            </div>
+        )
+       
+    }
     
     const btnAgregarAlCarrito = (quantity)=>{
         setCantidad(quantity)
@@ -69,9 +92,9 @@ const DetallesDelProducto = ({name, id, price, stock}) =>{
            <div className="col">
            <img className="w-100 mt-4 mb-3" src={product.img} alt={product.id}></img>
            <div className="row d-flex ">
-            <div className="col"><img className="w-100 " src={product.img2} alt={product.name}></img></div>
-            <div className="col"><img className="w-100 " src={product.img3} alt={product.name}></img></div>
-            <div className="col"><img className="w-100 " src={product.img4} alt={product.name}></img></div>
+            {product.img2 ? (<div className="col"><img className="w-100 " src={product.img2} alt={product.name}></img></div>): ''}
+            {product.img3 ? (<div className="col"><img className="w-100 " src={product.img3} alt={product.name}></img></div>): ''}
+            {product.img4 ? (<div className="col"><img className="w-100 " src={product.img4} alt={product.name}></img></div>): ''}
            </div>
            </div>
            <div className="col mt-1">
@@ -83,7 +106,7 @@ const DetallesDelProducto = ({name, id, price, stock}) =>{
            <div>
            {/* <button className="btn btn-primary fs-6 rounded-4 w-50 - mx-auto" onClick={btnAgregarAlCarrito}>Agregar al carrito</button> */}
            </div>
-           <div className='ItemFooter'>
+           <div className=''>
                 {
                     cantidad === 0 ? (
                         <Count onConfirm={btnAgregarAlCarrito} stock={stock} />
@@ -104,5 +127,5 @@ const DetallesDelProducto = ({name, id, price, stock}) =>{
       </div>
     )
 }
-export default DetallesDelProducto
+export default ItemDetailContainer
 

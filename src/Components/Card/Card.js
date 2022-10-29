@@ -1,5 +1,4 @@
 import './Card.css'
-import RunToastify from '../Toastify/Toastify';
 import { Link } from 'react-router-dom'
 
 const Card = ({products})=>{
@@ -16,8 +15,8 @@ const Card = ({products})=>{
                 {<img src={product.img} className="sizeImg pt-3 pb-3 mx-auto" id="imgproduct" alt="pro"></img>}
                 </Link>
                 <div className="d-flex justify-content-around ">   
-                <h3 className="fs-7 text-start fw-normal ms-3 mt-3">{product.description}</h3>             
-                {product.stock > 0 ? <RunToastify className='btn btn-primary my-2 rounded-5 fs-8' texto={'Comprar'}/>: <RunToastify  className='btn btn-primary  my-2 rounded-5 fs-8  disabled' texto={'Agotado'}/>}
+                <h3 className="fs-7 text-start fw-normal ms-3 mt-3">{product.description}</h3>    
+                <h3 className="fs-5 text-start fw-normal  bg-dark rounded-3 px-1 text-white ms-3 mt-3">${product.price}</h3>         
                 </div>
              
                 </div>

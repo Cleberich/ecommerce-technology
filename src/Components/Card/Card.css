@@ -30,6 +30,6 @@
     background-color: #DFDEE3!important;
 }
 
-#sm:hover{
+#sm:hover, #cardCart:hover{
     transform: none;
 }

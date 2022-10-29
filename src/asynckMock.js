@@ -160,18 +160,26 @@ const products = [
     "img":"https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/watch-card-40-hermes-202209?wid=340&hei=264&fmt=jpeg&qlt=95&.v=1660616726938"}
 ]
 
-export const getProducts = () =>{
-    return new Promise ((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve(products)
-        },1000)
-    })
-}
+// export const getProduct = () =>{
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(()=>{
+//             resolve(products)
+//         },1000)
+//     })
+// }
 
-export const getProduct = (id) =>{
-  return new Promise ((resolve)=>{
-    setTimeout(()=>{
-      resolve(products.find(product => product.id === id))
-    }, [])
+export const getProducts = (categoryId) =>{
+  return new Promise ((resolve, reject) =>{
+      setTimeout(() =>{
+          resolve(categoryId ? products.filter(prod => prod.category === categoryId) : products)
+          
+      },1000)
+  })
+}
+export const getProduct = (id) => {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          resolve(products.find(prod => prod.id === id))
+      }, 1000)
   })
 }
