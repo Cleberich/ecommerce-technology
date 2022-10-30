@@ -87,9 +87,9 @@ const ItemDetailContainer = ({name, id, price, stock}) =>{
     const Count = ButtonCount 
 
     return (
-        <div className="col-8 mx-auto card rounded-4 m-5 text-start border-0 shadow-sm" id="sm">
+        <div className="col-sm-12 col-md-10 col-lg-9 mx-auto card rounded-4 mt-sm-2 mt-md-4 mt-lg-5 text-start border-0 shadow-sm" id="sm">
         <div className="m-5 row">
-           <div className="col">
+           <div className="col-sm-10 col-md-6">
            <img className="w-100 mt-4 mb-3" src={product.img} alt={product.id}></img>
            <div className="row d-flex ">
             {product.img2 ? (<div className="col"><img className="w-100 " src={product.img2} alt={product.name}></img></div>): ''}

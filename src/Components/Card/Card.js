@@ -5,7 +5,7 @@ const Card = ({products})=>{
     return (
         <div className="row mx-5 bg-light" id="">
             { products.map(product => 
-            <div className="col-xs-6 col-sm-6 col-md-5 col-lg-3 " id="cardproduct" key={product.id}>
+            <div className="col-xs-4 col-sm-4 col-md-4 col-lg-3 " id="cardproduct" key={product.id}>
                 <div className="card border-0 shadow-md mb-3  rounded-4 py-5" id="card">
                 <Link to={`/detalles/${product.id}`} className="text-decoration-none text-dark">
                 <small className="text-marron text-start ms-5 ">{product.badge ? product.badge: " " }</small>

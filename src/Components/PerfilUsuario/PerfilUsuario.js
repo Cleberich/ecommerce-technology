@@ -42,13 +42,13 @@ const PerfilUsuario = () => {
         }
 
     return (
-      <div className='row bg-white pb-5 m-3 shadow-md rounded-3 h-75'>
-        <div className='col-3 mx-auto border-end py-5 mt-5 bg-black h-75 rounded-5'>
+      <div className='row bg-white pb-5 m-3 shadow-md rounded-3 h-sm-25 h-md-75 h-lg-75 '>
+        <div className='col-sm-8 col-md-3 col-lg-3 mx-auto border-end py-5 mt-md-5 mt-lg-5 mt-sm-1 bg-black h-75 rounded-5'>
             <img className='rounded-circle' src={user.picture} alt={user.name}/>
             <h3 className="fs-3 mt-3 pt-5 text-white">{user.name}</h3>
-            <h4 className="fs-5 text-white pb-5">{user.email}</h4>
+            <h4 className="fs-5 text-white pb-sm-1 pb-md-5 pb-lg-5 ">{user.email}</h4>
         </div>
-        <div className='col-8 mx-auto mt-5'>
+        <div className='col mx-auto mt-5'>
             {
                 pedidos.length > 0 ? (
                     <>

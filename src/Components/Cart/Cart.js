@@ -14,7 +14,7 @@ const Cart = () => {
   
 
     return (
-    <div className="col-10 mt-5 card mx-auto rounded-4 py-5 border-0 shadow-sm " id="cardCart">
+    <div className="col-sm-12 col-md-10 col-lg-9 mt-sm-1 mt-md-5 card mx-auto rounded-4 py-5 border-0 shadow-sm " id="cardCart">
        {cart.length > 0 ?  <h2 className="text-center my-3">Mi pedido</h2> :  <h2 className="text-center my-3">Aún no has agregado productos al carrito</h2>}
         {cart.length > 0 && (
             <div  className="row fw-bold ">

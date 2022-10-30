@@ -77,8 +77,8 @@ const Checkout = () => {
 
 
   return (
-    <div className="bg-white p-5 col-7 mx-auto mt-3 text-start d-flex">
-        <div className="col-7">
+    <div className="bg-white p-5 mx-auto mt-3 text-start d-inline-flex col-sm-12 col-md-8 col-lg-8 row">
+        <div className="col-sm-10 col-md-8 col-lg-8">
         <form className= "" onSubmit={completarPedido}>
             <h2 className="fs-6 fw-bold mb-2 text-center">Detalle de facturación</h2>
                 <label htmlFor='nombre' className="ms-1 fs-6">Nombre *</label>
@@ -95,7 +95,7 @@ const Checkout = () => {
                     <input type="tel" className="form-control mb-2" placeholder="Ingresa tu teléfono" onChange={e => setTelefono(e.target.value)} id="telefono"/>
             </form>
         </div>
-            <div  className="col-5 d-block">
+            <div  className="col-sm-12 col-md-4 col-lg-4 d-block">
                 <h2 className="text-center fs-6 fw-bold">Tu orden</h2>
                 <h3 className="ms-5 me-4 mt-4 d-flex justify-content-between fs-6">Total a Pagar <span>${subtotal}</span></h3>
                 <div className="ms-4 d-flex justify-content-center">
@@ -105,7 +105,7 @@ const Checkout = () => {
                     <label className="fs-7 ms-2"><InsertLinkIcon/> <LogoMercadoPago/> </label>
                 </div>
             <div className="mx-4">
-                    <button type="submit" onClick={completarPedido} className="ms-4 mt-3 text-center btn btn-dark w-100">Completar pedido</button>
+                    <button type="submit" onClick={completarPedido} className="ms-sm-1 ms-md-3 ms-lg-3 mt-3 text-center btn btn-dark w-100">Completar pedido</button>
             </div>
             </div>
     </div>
