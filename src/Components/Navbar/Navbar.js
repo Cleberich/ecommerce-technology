@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom'
 import CartWidget from '../CartWidget/CartWidget'
 import Login from '../Login/Login'
 
-function BasicExample() {
+function NavBar() {
   return (
     <Navbar className="dark sticky-sm-top sticky-md-top sticky-lg-top sticky-xl-top" expand="md">
       <Container className="separacion container-fluid " id="desktop">
-        <Navbar.Brand href="#home"><Link to="/"><LogoMyShop/></Link> </Navbar.Brand>
+        <Navbar.Brand href="/"><Link to="/"><LogoMyShop/></Link> </Navbar.Brand>
         <Navbar.Toggle className="bg-white" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
@@ -29,15 +29,13 @@ function BasicExample() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="">
-            <Link to="/smartphone" className='fs-7 text-white text-decoration-none mx-1'>iPhone</Link>
-            <Link to="/macbook" className='fs-7 text-white text-decoration-none mx-1'>Macbook</Link>
-            <Link to="/watch" className='fs-7 text-white text-decoration-none mx-1'>Watch</Link>
+            <Link to="category/smartphone" className='fs-7 text-white text-decoration-none mx-1'>iPhone</Link>
+            <Link to="category/macbook" className='fs-7 text-white text-decoration-none mx-1'>Macbook</Link>
+            <Link to="category/watch" className='fs-7 text-white text-decoration-none mx-1'>Watch</Link>
+            <Login/>
           </Nav>  
         </Navbar.Collapse>
-        <Navbar.Brand href="#home"><LogoMyShop className="w-125" /> </Navbar.Brand>
-
-
-       
+        <Navbar.Brand href="/"><LogoMyShop className="w-125" /> </Navbar.Brand>
         <ShoppingBagOutlinedIcon className="text-light fs-6 text-end"/>
       </Container>
     </Navbar>
@@ -46,4 +44,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default NavBar;

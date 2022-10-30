@@ -1,5 +1,5 @@
 import './App.css';
-import BasicExample from './Components/Navbar/Navbar'
+import NavBar from './Components/Navbar/Navbar'
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -15,7 +15,7 @@ function App() {
     <div className="App bg-light vh-100">
       <CartContextProvider>
       <BrowserRouter>
-        <BasicExample/>
+        <NavBar/>
         <Routes>
           <Route path='/' element={<ItemListContainer/>}  /> 
           <Route path='/category/:categoryId' element={<ItemListContainer/>}  /> 
