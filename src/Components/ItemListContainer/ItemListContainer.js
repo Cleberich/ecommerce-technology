@@ -48,7 +48,9 @@ const ItemListContainer = () =>{
             {!categoryId && <Portada/> }
             <TextoPrincipal/>
             <h2 className="h2titulo mt-0 mb-4 mx-auto">Todos los modelos. <span className="h2titulospan"> Elegí el tuyo hoy!</span></h2>
+            <div>
             <Card products = {products}/>
+            </div>
             
         </div>
     )
