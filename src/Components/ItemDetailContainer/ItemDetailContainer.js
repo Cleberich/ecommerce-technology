@@ -26,7 +26,9 @@ const ButtonCount = ({ onConfirm, stock, initial = 1 }) => {
     }
 
     const decrement = () => {
+        if(count > 1){
             setCount(count - 1)
+        }    
 
     }
 
