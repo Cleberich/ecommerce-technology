@@ -18,7 +18,6 @@ const Card = ({products})=>{
                 <h3 className="fs-7 text-start fw-normal ms-3 mt-3">{product.description}</h3>    
                 <h3 className="fs-5 text-start fw-normal  bg-dark rounded-3 px-1 text-white ms-3 mt-3">${product.price}</h3>         
                 </div>
-             
                 </div>
             </div>) }
         </div>
