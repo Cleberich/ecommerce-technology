@@ -1,0 +1,13 @@
+@media(max-width: 649px){
+
+}
+.caja{
+  width: 100%;
+}
+.contador{
+display: none;
+width: 100%;
+}
+.boton{
+  display: block;
+}
